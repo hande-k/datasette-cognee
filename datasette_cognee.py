@@ -6,6 +6,7 @@ import click
 import cognee
 from cognee.api.v1.search import SearchType
 from cognee.shared.utils import setup_logging
+from cognee.shared.utils import render_graph
 
 from datasette import hookimpl
 
@@ -89,6 +90,8 @@ async def _async_cognee_ingest(db_path, table_name, reset):
     await cognee.cognify()
     print("Cognify done.")
 
+    await render_graph()
+
 async def _async_cognee_query(query_text):
     """
     Async function to query the knowledge graph using Cognee.
@@ -97,7 +100,7 @@ async def _async_cognee_query(query_text):
 
     print(f"Querying Cognee with: '{query_text}'")
     search_results = await cognee.search(
-        query_type=SearchType.INSIGHTS,
+        query_type=SearchType.GRAPH_COMPLETION,
         query_text=query_text
     )
 
