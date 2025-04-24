@@ -55,7 +55,7 @@ MIGRATION_DB_PATH=/path_to_your_datasette_cognee/datasette-cognee # replace with
 4. datasette serve github.db # (see whats in the db)
 
 --
-
+- Visualize the graph in your home directory.
 - You can delete github.db in this repo and use the github-to-sqlite plugin from datasette to start fresh with the repository of your choice or you can add a new repo to cognee by simply running `github-to-sqlite contributors github.db owner/repo`. 
 
 
