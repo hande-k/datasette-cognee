@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import sqlite3
 import click
 import os
 
@@ -19,6 +20,47 @@ from datasette import hookimpl
 logger = get_logger()
 logger.setLevel(logging.ERROR)
 
+def fix_contributors_table(db_path: str):
+    """
+    Rebuilds the 'contributors' table with a unique primary key and
+    a foreign key referencing 'users(user_id)'.
+    """
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    # Enable foreign key support in SQLite
+    cursor.execute("PRAGMA foreign_keys = ON;")
+
+    # 1) Create a new table with a primary key 'id' 
+    #    and a foreign key referencing users(user_id):
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS contributors_new (
+            id TEXT PRIMARY KEY,
+            repo_id TEXT,
+            user_id TEXT,
+            contributions INTEGER,
+            FOREIGN KEY (repo_id) REFERENCES repos(id)
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        );
+    """)
+
+    # 2) Copy over the data, making 'id' a unique combination:
+    cursor.execute("""
+        INSERT INTO contributors_new (id, repo_id, user_id, contributions)
+        SELECT 
+            repo_id || '_' || user_id AS id,
+            repo_id,
+            user_id,
+            contributions
+        FROM contributors;
+    """)
+
+    # 3) Drop old table and rename the new one:
+    cursor.execute("DROP TABLE IF EXISTS contributors;")
+    cursor.execute("ALTER TABLE contributors_new RENAME TO contributors;")
+
+    conn.commit()
+    conn.close()
 
 @hookimpl
 def register_commands(cli):
@@ -69,6 +111,11 @@ async def _async_cognee_relational_migrate(db_path, reset):
     """
     Async function to, prune, setup, extract schema, migrate, and visualize.
     """
+
+    print("Fixing contributors table...")
+    fix_contributors_table(db_path)
+    print("contributors table has been fixed.\n")
+
     if reset:
         print("Pruning data...")
         await prune.prune_data()
