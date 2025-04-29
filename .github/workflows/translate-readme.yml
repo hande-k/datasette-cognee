@@ -1,0 +1,47 @@
+name: Translate Readme
+
+on:
+  # Run on the 1st day of each month at 00:00 UTC
+  schedule:
+    - cron: '0 0 1 * *'
+  # Allow manual triggers of the workflow if you need an on-demand run
+  workflow_dispatch:
+
+jobs:
+  translate-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # needed to commit files
+      pull-requests: write   # needed to create a pull request
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Translate Readme
+        uses: crowdin/translate-readme@v0.1.2
+        with:
+          # Only translate to Turkish (tr) and German (de)
+          languages: tr,de
+
+          # Put the generated translations in available_languages/
+          destination: available_languages
+
+          # If you want a language switcher inserted into your README.md,
+          # add the required placeholders in your README and set this to `true`
+          # language_switcher: true
+
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          # (Optional) For Crowdin Enterprise:
+          # CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: New Readme Translations by Crowdin
+          body: By [translate-readme](https://github.com/crowdin/translate-readme) GitHub action
+          commit-message: New Readme Translations
+          committer: Crowdin Bot <support+bot@crowdin.com>
+          branch: docs/readme-translations
