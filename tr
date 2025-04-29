@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="8" original="/README.md" source-language="en" target-language="tr" datatype="plaintext" project-id="785662" tool-id="crowdin">
+    <header>
+      <tool tool-id="crowdin" tool-name="Crowdin" tool-version="1.1"/>
+    </header>
+    <body>
+      <trans-unit id="2">
+        <source>datasette-cognee</source>
+        <target state="needs-translation">datasette-cognee</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Introduction</source>
+        <target state="needs-translation">Introduction</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[1]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>This is a plugin for Datasette that integrates with cognee to provide knowledge graph capabilities for Datasette databases.</source>
+        <target state="needs-translation">This is a plugin for Datasette that integrates with cognee to provide knowledge graph capabilities for Datasette databases.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[2]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>cognee allows you to ingest structured data from SQLite databases into a knowledge graph and perform semantic queries against that graph.</source>
+        <target state="needs-translation">cognee allows you to ingest structured data from SQLite databases into a knowledge graph and perform semantic queries against that graph.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[3]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Project to discover repository contributors</source>
+        <target state="needs-translation">Project to discover repository contributors</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[4]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>This project utilizes https://github.com/dogsheep/github-to-sqlite for fetching GitHub data to SQLite database to be migrated into cognee.</source>
+        <target state="needs-translation">This project utilizes https://github.com/dogsheep/github-to-sqlite for fetching GitHub data to SQLite database to be migrated into cognee.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[5]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>As the default database, https://github.com/dogsheep/github-to-sqlite?tab=readme-ov-file#fetching-contributors-to-a-repository is used to fetch contributors of cognee.</source>
+        <target state="needs-translation">As the default database, https://github.com/dogsheep/github-to-sqlite?tab=readme-ov-file#fetching-contributors-to-a-repository is used to fetch contributors of cognee.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[6]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>github-to-sqlite contributors github.db topoteretes/cognee</source>
+        <target state="needs-translation">github-to-sqlite contributors github.db topoteretes/cognee</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //code[7]/value</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Do the following for a quick test:</source>
+        <target state="needs-translation">Do the following for a quick test:</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[8]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>1- Clone this repo</source>
+        <target state="needs-translation">1- Clone this repo</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[9]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>2- Set your .env variables using the .env.template</source>
+        <target state="needs-translation">2- Set your .env variables using the .env.template</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[10]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24">
+        <source># In case you choose to use OpenAI as a provider, add just the model and api_key.
+LLM_API_KEY=&quot;&quot;
+LLM_MODEL=&quot;openai/gpt-4o-mini&quot;
+# Not needed if you use OpenAI
+LLM_PROVIDER=&quot;openai&quot;
+LLM_ENDPOINT=&quot;&quot;
+LLM_API_VERSION=&quot;&quot;
+
+# In case you choose to use OpenAI as a provider, add just the model and api_key.
+EMBEDDING_API_KEY=&quot;&quot;
+EMBEDDING_MODEL=&quot;openai/text-embedding-3-large&quot;
+# Not needed if you use OpenAI
+EMBEDDING_PROVIDER=&quot;openai&quot;
+EMBEDDING_ENDPOINT=&quot;&quot;
+EMBEDDING_API_VERSION=&quot;&quot;
+
+# Necessary for this project
+GITHUB_TOKEN=&quot;&quot;
+
+MIGRATION_DB_PROVIDER=sqlite
+MIGRATION_DB_NAME=github.db      
+MIGRATION_DB_PATH=/path_to_your_datasette_cognee/datasette-cognee # replace with the path to your cloned datasette-cognee
+</source>
+        <target state="needs-translation"># In case you choose to use OpenAI as a provider, add just the model and api_key.
+LLM_API_KEY=&quot;&quot;
+LLM_MODEL=&quot;openai/gpt-4o-mini&quot;
+# Not needed if you use OpenAI
+LLM_PROVIDER=&quot;openai&quot;
+LLM_ENDPOINT=&quot;&quot;
+LLM_API_VERSION=&quot;&quot;
+
+# In case you choose to use OpenAI as a provider, add just the model and api_key.
+EMBEDDING_API_KEY=&quot;&quot;
+EMBEDDING_MODEL=&quot;openai/text-embedding-3-large&quot;
+# Not needed if you use OpenAI
+EMBEDDING_PROVIDER=&quot;openai&quot;
+EMBEDDING_ENDPOINT=&quot;&quot;
+EMBEDDING_API_VERSION=&quot;&quot;
+
+# Necessary for this project
+GITHUB_TOKEN=&quot;&quot;
+
+MIGRATION_DB_PROVIDER=sqlite
+MIGRATION_DB_NAME=github.db      
+MIGRATION_DB_PATH=/path_to_your_datasette_cognee/datasette-cognee # replace with the path to your cloned datasette-cognee
+</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //code[11]/value</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>3- Run the following</source>
+        <target state="needs-translation">3- Run the following</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //heading[12]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>python -m venv venv &amp;&amp; source venv/bin/activate &amp;&amp; pip install -e .</source>
+        <target state="needs-translation">python -m venv venv &amp;&amp; source venv/bin/activate &amp;&amp; pip install -e .</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[13]/listItem[0]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>datasette cognee relational-migrate github.db</source>
+        <target state="needs-translation">datasette cognee relational-migrate github.db</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[13]/listItem[1]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>datasette cognee query &quot;What information is in the database?&quot;</source>
+        <target state="needs-translation">datasette cognee query &quot;What information is in the database?&quot;</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[13]/listItem[2]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>datasette serve github.db # (see whats in the db)</source>
+        <target state="needs-translation">datasette serve github.db # (see whats in the db)</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[13]/listItem[3]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>--</source>
+        <target state="needs-translation">--</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //paragraph[14]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Visualize the graph in your home directory.</source>
+        <target state="needs-translation">Visualize the graph in your home directory.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[15]/listItem[0]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>You can delete github.db in this repo and use the github-to-sqlite plugin from datasette to start fresh with the repository of your choice or you can add a new repo to cognee by simply running `github-to-sqlite contributors github.db owner/repo`.</source>
+        <target state="needs-translation">You can delete github.db in this repo and use the github-to-sqlite plugin from datasette to start fresh with the repository of your choice or you can add a new repo to cognee by simply running `github-to-sqlite contributors github.db owner/repo`.</target>
+        <context-group purpose="information">
+          <context context-type="source">CXPath: //list[15]/listItem[1]/paragraph[0]/content</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
