@@ -21,8 +21,6 @@ jobs:
       - name: Translate Readme
         uses: crowdin/translate-readme@v0.1.2
         with:
-          # Only translate to Turkish (tr) and German (de)
-          languages: tr,de
 
           # Put the generated translations in available_languages/
           destination: available_languages
