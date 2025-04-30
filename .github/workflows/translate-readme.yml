@@ -1,10 +1,8 @@
 name: Translate Readme
 
 on:
-  # Run on the 1st day of each month at 00:00 UTC
   schedule:
     - cron: '0 0 1 * *'
-  # Allow manual triggers of the workflow if you need an on-demand run
   workflow_dispatch:
 
 jobs:
@@ -25,15 +23,9 @@ jobs:
           # Put the generated translations in available_languages/
           destination: available_languages
 
-          # If you want a language switcher inserted into your README.md,
-          # add the required placeholders in your README and set this to `true`
-          # language_switcher: true
-
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-          # (Optional) For Crowdin Enterprise:
-          # CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
